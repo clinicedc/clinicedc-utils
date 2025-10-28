@@ -5,6 +5,7 @@ from clinicedc_constants import (
     MILLIMOLES_PER_LITER,
 )
 
+from ..constants import molecular_weights
 from ..exceptions import ConversionNotHandled
 from ..round_up import round_half_away_from_zero
 from .micromoles_per_liter_to import micromoles_per_liter_to
@@ -29,8 +30,7 @@ class UnitsConverter:
         self.units_from = units_from
         self.units_to = units_to
         self.places = places or 4
-        self.mw = mw
-
+        self._mw = mw
         if label is None:
             raise ValueError("label is required. See convert_units.")
         if value is not None and units_from and units_to and units_from != units_to:
@@ -41,6 +41,17 @@ class UnitsConverter:
             raise ConversionNotHandled(
                 f"Conversion not handled. Tried {label} from {units_from} to {units_to}."
             )
+
+    @property
+    def mw(self) -> float | int:
+        if self._mw is None:
+            try:
+                self._mw = molecular_weights[self.label]
+            except KeyError as e:
+                raise ConversionNotHandled(
+                    f"Molecular weight may not be None. Got {self.label}."
+                ) from e
+        return self._mw
 
     def round_up(self, converted_value):
         try:
