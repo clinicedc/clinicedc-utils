@@ -12,6 +12,7 @@ def convert_units(
     units_from: str | None = None,
     units_to: str | None = None,
     places: int | None = None,
+    mw: float | None = None,
 ) -> int | float:
     return UnitsConverter(
         label=label,
@@ -19,4 +20,5 @@ def convert_units(
         units_from=units_from,
         units_to=units_to,
         places=places,
+        mw=mw,
     ).converted_value

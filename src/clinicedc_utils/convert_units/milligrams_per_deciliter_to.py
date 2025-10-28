@@ -18,11 +18,11 @@ def milligrams_per_deciliter_to(
         return {MILLIGRAMS_PER_DECILITER: float(value)}
     if units_to == MILLIMOLES_PER_LITER:
         if mw is None:
-            raise ConversionNotHandled("Molecular weight may not ne None.")
+            raise ConversionNotHandled("Molecular weight may not be None.")
         return {MILLIMOLES_PER_LITER: (float(value) * 10.00) / mw}
     if units_to == MICROMOLES_PER_LITER:
         if mw is None:
-            raise ConversionNotHandled("Molecular weight may not ne None.")
+            raise ConversionNotHandled("Molecular weight may not be None.")
         return {MICROMOLES_PER_LITER: (float(value) * 10000.00) / mw}
     if units_to == MILLIGRAMS_PER_LITER:
         return {MILLIGRAMS_PER_LITER: float(value) * 10.00}

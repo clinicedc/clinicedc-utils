@@ -1,0 +1,1 @@
+MW_CREATININE = 113.12  # g/mol
