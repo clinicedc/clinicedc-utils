@@ -1,0 +1,23 @@
+version = 1
+revision = 3
+requires-python = ">=3.10"
+
+[[package]]
+name = "clinicedc-constants"
+version = "1.0.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/77/2a/1ba12f635f5eda4662d173d9990efd70659ba02729ab6364a3e226e6018e/clinicedc_constants-1.0.1.tar.gz", hash = "sha256:89678352e5d17983a01b204c2e7c8898bc7f9451d7d53c211892859c66795b57", size = 5601, upload-time = "2025-10-28T17:13:37.637Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b3/ca/b5f3301c4f64aa06e15b61489599a94532035d2b1b8743bba01135cf7698/clinicedc_constants-1.0.1-py3-none-any.whl", hash = "sha256:429dd89c9e14878b15a56d62ef4cdd3998e0b3ef56dac74e07833799ea30dcde", size = 7238, upload-time = "2025-10-28T17:13:36.864Z" },
+]
+
+[[package]]
+name = "clinicedc-utils"
+version = "0.1.1"
+source = { editable = "." }
+dependencies = [
+    { name = "clinicedc-constants" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "clinicedc-constants", specifier = ">=1.0.1" }]
