@@ -19,10 +19,10 @@ def micromoles_per_liter_to(
         return {MILLIMOLES_PER_LITER: float(value) / 1000.00}
     if units_to == GRAMS_PER_LITER:
         if mw is None:
-            raise ConversionNotHandled("Molecular weight may not ne None.")
+            raise ConversionNotHandled("Molecular weight may not be None.")
         return {GRAMS_PER_LITER: (float(value) * mw) / 100.00}
     if units_to == MILLIGRAMS_PER_DECILITER:
         if mw is None:
-            raise ConversionNotHandled("Molecular weight may not ne None.")
+            raise ConversionNotHandled("Molecular weight may not be None.")
         return {MILLIGRAMS_PER_DECILITER: (float(value) * mw) / 10000.00}
     raise ConversionNotHandled(f"Conversion not found. Tried umol/L to {units_to}. ")
