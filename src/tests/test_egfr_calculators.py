@@ -231,7 +231,6 @@ class TestCalculators(TestCase):
             age_in_years=30,
             creatinine_value=52.0,
             creatinine_units=MICROMOLES_PER_LITER,
-            ethnicity=BLACK,
         )
         self.assertEqual(0.7, egfr.kappa)
 
@@ -240,7 +239,6 @@ class TestCalculators(TestCase):
             age_in_years=30,
             creatinine_value=52.0,
             creatinine_units=MICROMOLES_PER_LITER,
-            ethnicity=BLACK,
         )
         self.assertEqual(0.9, egfr.kappa)
 
@@ -249,7 +247,6 @@ class TestCalculators(TestCase):
             age_in_years=30,
             creatinine_value=53.0,
             creatinine_units=MICROMOLES_PER_LITER,
-            ethnicity=BLACK,
         )
         self.assertEqual(-0.241, egfr.alpha)
         self.assertEqual(1.012, egfr.gender_factor)
@@ -262,7 +259,6 @@ class TestCalculators(TestCase):
             age_in_years=30,
             creatinine_value=53.0,
             creatinine_units=MICROMOLES_PER_LITER,
-            ethnicity=BLACK,
         )
         self.assertEqual(-0.302, egfr.alpha)
         self.assertEqual(1, egfr.gender_factor)
@@ -272,7 +268,6 @@ class TestCalculators(TestCase):
 
         egfr1 = EgfrCkdEpi2021(
             gender=MALE,
-            ethnicity=BLACK,
             creatinine_value=0.600,
             age_in_years=30,
             creatinine_units=MILLIGRAMS_PER_DECILITER,

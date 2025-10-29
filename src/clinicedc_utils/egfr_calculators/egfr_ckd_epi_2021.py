@@ -38,9 +38,8 @@ class EgfrCkdEpi2021(BaseEgfr):
 
     black = BLACK
 
-    def __init__(self, *, ethnicity: str, **kwargs):
+    def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.ethnicity = ethnicity
         if self.creatinine_units == self.micromoles_per_liter:
             self.creatinine_value = convert_units(
                 label="creatinine",
@@ -63,7 +62,6 @@ class EgfrCkdEpi2021(BaseEgfr):
         opts = dict(
             gender=self.gender,
             age_in_years=self.age_in_years,
-            ethnicity=self.ethnicity,
             creatinine_value=self.creatinine_value,
         )
         raise EgfrCalculatorError(f"Unable to calculate. Insufficient information. Got {opts}")
