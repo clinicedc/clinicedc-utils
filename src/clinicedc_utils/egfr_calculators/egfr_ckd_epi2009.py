@@ -9,10 +9,10 @@ from .base_egfr import BaseEgfr, EgfrCalculatorError
 # TODO: https://www.rcpa.edu.au/Manuals/RCPA-Manual/
 #  Pathology-Tests/C/Creatinine-clearance-Cockcroft-and-Gault
 
-__all__ = ["EgfrCkdEpi"]
+__all__ = ["EgfrCkdEpi2009"]
 
 
-class EgfrCkdEpi(BaseEgfr):
+class EgfrCkdEpi2009(BaseEgfr):
     """Reference https://nephron.com/epi_equation
 
     CKD-EPI Creatinine equation (2009)
@@ -23,7 +23,7 @@ class EgfrCkdEpi(BaseEgfr):
 
     black = BLACK
 
-    def __init__(self, ethnicity: str, **kwargs):
+    def __init__(self, *, ethnicity: str, **kwargs):
         super().__init__(**kwargs)
         self.ethnicity = ethnicity
         if self.creatinine_units == self.micromoles_per_liter:

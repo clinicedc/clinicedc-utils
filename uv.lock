@@ -4,16 +4,16 @@ requires-python = ">=3.10"
 
 [[package]]
 name = "clinicedc-constants"
-version = "1.0.1"
+version = "1.1.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/77/2a/1ba12f635f5eda4662d173d9990efd70659ba02729ab6364a3e226e6018e/clinicedc_constants-1.0.1.tar.gz", hash = "sha256:89678352e5d17983a01b204c2e7c8898bc7f9451d7d53c211892859c66795b57", size = 5601, upload-time = "2025-10-28T17:13:37.637Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c1/80/483a69809d7f7678d575cd4b35b7ed614abe381e525073db7c8064da9d27/clinicedc_constants-1.1.0.tar.gz", hash = "sha256:1e1dc01ad78d56d33bb7cff13450867f39c438f35a18621b8858c3a421fbce15", size = 5997, upload-time = "2025-10-28T21:47:37.693Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b3/ca/b5f3301c4f64aa06e15b61489599a94532035d2b1b8743bba01135cf7698/clinicedc_constants-1.0.1-py3-none-any.whl", hash = "sha256:429dd89c9e14878b15a56d62ef4cdd3998e0b3ef56dac74e07833799ea30dcde", size = 7238, upload-time = "2025-10-28T17:13:36.864Z" },
+    { url = "https://files.pythonhosted.org/packages/94/ba/0172a5973c056c937e75ec9e0ace1f27238f18b46aa4d5e1219d674068b5/clinicedc_constants-1.1.0-py3-none-any.whl", hash = "sha256:464c98bae3cfad362d431034aef81a0e0419bc7bc5789a55f6b72450811aad96", size = 7690, upload-time = "2025-10-28T21:47:36.725Z" },
 ]
 
 [[package]]
 name = "clinicedc-utils"
-version = "0.3.0"
+version = "0.4.0"
 source = { editable = "." }
 dependencies = [
     { name = "clinicedc-constants" },
