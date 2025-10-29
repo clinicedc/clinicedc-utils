@@ -11,3 +11,6 @@ molecular_weights = dict(
     trig=885,
     urea=60.06,
 )
+
+CKD_EPI = "ckd-epi"
+COCKCROFT_GAULT = "cockcroft-gault"
