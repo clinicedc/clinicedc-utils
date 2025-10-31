@@ -34,6 +34,8 @@ class EgfrCkdEpi2009(BaseEgfr):
                 units_to=self.milligrams_per_deciliter,
                 mw=self.mw_creatinine,
             )
+        else:
+            self.creatinine_value = float(self.creatinine_value)
 
     @property
     def value(self) -> float | None:

@@ -1,6 +1,6 @@
 [project]
 name = "clinicedc-utils"
-version = "0.4.0"
+version = "0.5.0"
 description = "Add your description here"
 readme = "README.rst"
 authors = [
@@ -23,9 +23,13 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "clinicedc-constants>=1.0.1",
+    "pandas>=2.3.3",
+    "remote-read-sql>=1.2.3",
+    "sqlalchemy>=2.0.44",
+    "tqdm>=4.67.1",
 ]
 
 [project.urls]
