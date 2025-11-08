@@ -13,6 +13,7 @@ from .egfr_calculators import (
 )
 from .exceptions import ConversionNotHandled, EgfrCalculatorError
 from .export_raw_tables import export_raw_tables
+from .misc import get_display_from_choices
 from .round_up import round_half_away_from_zero, round_half_up, round_up
 
 __all__ = [
@@ -28,6 +29,7 @@ __all__ = [
     "convert_visit_code_to_float",
     "egfr_percent_change",
     "export_raw_tables",
+    "get_display_from_choices",
     "micromoles_per_liter_to",
     "milligrams_per_deciliter_to",
     "round_half_away_from_zero",

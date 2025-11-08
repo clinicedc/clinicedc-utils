@@ -60,6 +60,8 @@ def export_raw_tables(
         **db_conn_opts
     )
 
+    Note: this func does not follow relations for FK and M2M fields.
+
     """
 
     db_conn_opts = dict(
