@@ -29,6 +29,7 @@ def export_raw_tables(
     db_name: str | None = None,
     include_tables: list[str] | None = None,
     exclude_tables: list[str] | None = None,
+    stata_version: int | None = None,
 ) -> dict:
     """Export raw tables to CSV and DTA to the given data folder.
 
@@ -80,6 +81,7 @@ def export_raw_tables(
                 db_name,
                 include_tables,
                 exclude_tables,
+                stata_version,
             )
     else:
         conn_opts = dict(
@@ -97,6 +99,7 @@ def export_raw_tables(
                 db_name,
                 include_tables,
                 exclude_tables,
+                stata_version,
             )
     return problems
 
@@ -109,6 +112,7 @@ def _export_raw_tables(
     db_name: str,
     include_tables: list[str] | None = None,
     exclude_tables: list[str] | None = None,
+    stata_version: int | None = None,
 ):
     df_subject_visit = get_df_subject_visit(subject_visit_table, db_name, db_conn)
     df_subject_consent = get_df_subject_consent(subject_consent_table, db_name, db_conn)
@@ -160,7 +164,9 @@ def _export_raw_tables(
 
             df.to_csv(csv_path, sep="|", encoding="utf-8", index=False)
             try:
-                df.to_stata(path=dta_path, version=118, write_index=False)
+                df.to_stata(path=dta_path, version=stata_version or 118, write_index=False)
             except ValueError as e:
+                problems.update({table_name: str(e)})
+            except NotImplementedError as e:
                 problems.update({table_name: str(e)})
     return problems
