@@ -1,3 +1,5 @@
+import contextlib
+
 from clinicedc_constants import (
     GRAMS_PER_LITER,
     MICROMOLES_PER_LITER,
@@ -45,12 +47,8 @@ class UnitsConverter:
     @property
     def mw(self) -> float | int:
         if self._mw is None:
-            try:
+            with contextlib.suppress(KeyError):
                 self._mw = molecular_weights[self.label]
-            except KeyError as e:
-                raise ConversionNotHandled(
-                    f"Molecular weight may not be None. Got {self.label}."
-                ) from e
         return self._mw
 
     def round_up(self, converted_value):
