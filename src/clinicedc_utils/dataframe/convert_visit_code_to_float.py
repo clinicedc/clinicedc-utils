@@ -8,7 +8,7 @@ if TYPE_CHECKING:
 
 def convert_visit_code_to_float(df: pd.Dataframe) -> pd.Dataframe:
     """Convert visit_code to float using visit_code_sequence"""
-    if df["visit_code"].dtype == "object":
+    if str(df["visit_code"].dtype) in ["object", "str"]:
         df["visit_code_str"] = df["visit_code"]
         df["visit_code_sequence_new"] = df["visit_code_sequence"]
         df["visit_code_sequence_new"] = (
