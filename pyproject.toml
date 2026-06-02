@@ -27,7 +27,7 @@ requires-python = ">=3.11"
 dependencies = [
     "clinicedc-constants>=1.0.1",
     "pandas>=2.3.3",
-    "remote-read-sql>=1.2.3",
+    "remote-read-sql>=1.4.0",
     "sqlalchemy>=2.0.44",
     "tqdm>=4.67.1",
 ]
