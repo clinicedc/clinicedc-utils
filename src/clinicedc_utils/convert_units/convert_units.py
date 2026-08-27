@@ -7,10 +7,10 @@ from .units_converter import UnitsConverter
 
 def convert_units(
     *,
-    label: str | None = None,
-    value: int | float | None = None,
-    units_from: str | None = None,
-    units_to: str | None = None,
+    label: str,
+    value: int | float,
+    units_from: str,
+    units_to: str,
     places: int | None = None,
     mw: float | None = None,
 ) -> int | float:
